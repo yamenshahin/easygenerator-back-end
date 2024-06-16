@@ -4,7 +4,7 @@ import {Model} from 'mongoose'
 import {User} from '../schemas/user.schemas'
 import {hash} from 'bcrypt'
 
-const saltRounds = 10
+const saltRounds = parseInt(process.env.SALT_ROUNDS || '10', 10)
 @Injectable()
 export class UserService {
   constructor(@InjectModel(User.name) private userModel: Model<User>) {}
