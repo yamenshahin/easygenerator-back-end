@@ -26,4 +26,14 @@ export class UserService {
     newUser.password = await hash(user.password, saltRounds)
     return newUser.save()
   }
+
+  /**
+   * A description of the entire function.
+   *
+   * @param {string} email - The email to search for in the database.
+   * @return {Promise<User>} The user model found based on the email.
+   */
+  async findOneByEmail(email: string): Promise<User> {
+    return this.userModel.findOne({email: email})
+  }
 }
