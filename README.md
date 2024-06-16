@@ -26,6 +26,12 @@
 
 **The app includes a file named `.env-example` as a guide. Copy and paste its contents into a new file named `.env`.**
 
+## This app use
+
+- Use TypeScript
+- Implementing logging on the back end
+- Following security best practices
+
 ## Installation
 
 ```bash
