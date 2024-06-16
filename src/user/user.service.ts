@@ -28,7 +28,7 @@ export class UserService {
   }
 
   /**
-   * A description of the entire function.
+   * Get single user by email
    *
    * @param {string} email - The email to search for in the database.
    * @return {Promise<User>} The user model found based on the email.
