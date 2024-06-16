@@ -1,7 +1,7 @@
 import {Injectable} from '@nestjs/common'
 import {InjectModel} from '@nestjs/mongoose'
 import {Model} from 'mongoose'
-import {User} from '../schemas/user.schemas'
+import {User} from '../schemas/user.schema'
 import {hash} from 'bcrypt'
 
 const saltRounds = parseInt(process.env.SALT_ROUNDS || '10', 10)
