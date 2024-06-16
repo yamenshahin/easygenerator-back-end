@@ -1,7 +1,16 @@
-import {Body, Controller, HttpException, HttpStatus, Post} from '@nestjs/common'
+import {
+  Body,
+  Controller,
+  Get,
+  HttpException,
+  HttpStatus,
+  Post,
+  UseGuards,
+} from '@nestjs/common'
 import {AuthService} from './auth.service'
 import {AuthDto} from './dto/auth.dto'
 import {JwtService} from '@nestjs/jwt'
+import {AuthGuard} from '@nestjs/passport'
 
 @Controller('auth')
 export class AuthController {
@@ -23,5 +32,12 @@ export class AuthController {
     } catch (error) {
       throw new HttpException(error.message, HttpStatus.UNAUTHORIZED)
     }
+  }
+
+  // Add a protected route for authenticated users (replace with your actual route)
+  @Get('protected')
+  @UseGuards(AuthGuard('jwt')) // Use JWT authentication guard
+  async getProtectedData() {
+    return 'This is protected data accessible only with a valid JWT token.'
   }
 }
