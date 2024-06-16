@@ -11,10 +11,10 @@ export class AuthController {
     try {
       const loggedIn = await this.authService.validateUser(authDto)
       if (!loggedIn)
-        throw new HttpException('Wrong credentials', HttpStatus.BAD_REQUEST)
+        throw new HttpException('Wrong credentials', HttpStatus.UNAUTHORIZED)
       return {message: 'logged in successfully'}
     } catch (error) {
-      throw new HttpException(error.message, HttpStatus.BAD_REQUEST)
+      throw new HttpException(error.message, HttpStatus.UNAUTHORIZED)
     }
   }
 }
