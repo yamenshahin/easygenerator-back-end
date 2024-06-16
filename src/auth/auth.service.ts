@@ -8,10 +8,13 @@ export class AuthService {
   constructor(private readonly userService: UserService) {}
 
   async validateUser(authDto: AuthDto) {
-    const user = await this.userService.findOneByEmail(authDto.email)
-    if (user && (await bcrypt.compare(authDto.password, user.password))) {
-      const {password, ...result} = user
-      return result
+    const existingUser = await this.userService.findOneByEmail(authDto.email)
+    if (
+      existingUser &&
+      (await bcrypt.compare(authDto.password, existingUser.password))
+    ) {
+      const {password, ...user} = existingUser
+      return user
     }
     return null
   }
