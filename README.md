@@ -22,6 +22,10 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
+## Env file
+
+**The app includes a file named `.env-example` as a guide. Copy and paste its contents into a new file named `.env`.**
+
 ## Installation
 
 ```bash
@@ -40,7 +44,3 @@ $ npm run start:dev
 # production mode
 $ npm run start:prod
 ```
-
-## Env file
-
-**The app includes a file named `.env-example` as a guide. Copy and paste its contents into a new file named `.env`.**
